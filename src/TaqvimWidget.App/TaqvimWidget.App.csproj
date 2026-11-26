@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>TaqvimWidget</AssemblyName>
+    <RootNamespace>TaqvimWidget.App</RootNamespace>
+    <AssemblyTitle>Taqvim Widget</AssemblyTitle>
+    <Description>Internet tezligi, namoz vaqtlari va kalendar widgeti</Description>
+    <ApplicationIcon>..\..\assets\app.ico</ApplicationIcon>
+    <ApplicationManifest>..\Shared\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Compile Include="..\Shared\*.cs" LinkBase="Shared" />
+    <ProjectReference Include="..\TaqvimWidget.Core\TaqvimWidget.Core.csproj" />
+  </ItemGroup>
+</Project>

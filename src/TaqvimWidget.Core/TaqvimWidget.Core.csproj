@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>TaqvimWidget.Core</RootNamespace>
+    <Description>Taqvim Widget: interfeysga bog'liq bo'lmagan mantiq</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+</Project>

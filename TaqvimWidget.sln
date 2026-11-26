@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{115C2F04-F892-40C2-BB7D-D3F4439DF3A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaqvimWidget.Core", "src\TaqvimWidget.Core\TaqvimWidget.Core.csproj", "{B03B8068-1B27-4976-8BBA-96FA30D1195B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaqvimWidget.App", "src\TaqvimWidget.App\TaqvimWidget.App.csproj", "{54BD45EF-777D-4903-912D-ED6DC33E36E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaqvimWidget.Setup", "src\TaqvimWidget.Setup\TaqvimWidget.Setup.csproj", "{6C47DF9B-EF70-4057-ABD2-8AA1772144B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A9B5ECE5-44F2-453E-BEB5-BEDDEF85A943}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaqvimWidget.Core.Tests", "tests\TaqvimWidget.Core.Tests\TaqvimWidget.Core.Tests.csproj", "{EBA19EEA-7142-4D2D-964E-CA6D6F8A0F0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B03B8068-1B27-4976-8BBA-96FA30D1195B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B03B8068-1B27-4976-8BBA-96FA30D1195B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B03B8068-1B27-4976-8BBA-96FA30D1195B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B03B8068-1B27-4976-8BBA-96FA30D1195B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54BD45EF-777D-4903-912D-ED6DC33E36E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54BD45EF-777D-4903-912D-ED6DC33E36E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54BD45EF-777D-4903-912D-ED6DC33E36E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54BD45EF-777D-4903-912D-ED6DC33E36E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C47DF9B-EF70-4057-ABD2-8AA1772144B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C47DF9B-EF70-4057-ABD2-8AA1772144B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C47DF9B-EF70-4057-ABD2-8AA1772144B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C47DF9B-EF70-4057-ABD2-8AA1772144B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBA19EEA-7142-4D2D-964E-CA6D6F8A0F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBA19EEA-7142-4D2D-964E-CA6D6F8A0F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBA19EEA-7142-4D2D-964E-CA6D6F8A0F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBA19EEA-7142-4D2D-964E-CA6D6F8A0F0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B03B8068-1B27-4976-8BBA-96FA30D1195B} = {115C2F04-F892-40C2-BB7D-D3F4439DF3A9}
+		{54BD45EF-777D-4903-912D-ED6DC33E36E7} = {115C2F04-F892-40C2-BB7D-D3F4439DF3A9}
+		{6C47DF9B-EF70-4057-ABD2-8AA1772144B1} = {115C2F04-F892-40C2-BB7D-D3F4439DF3A9}
+		{EBA19EEA-7142-4D2D-964E-CA6D6F8A0F0B} = {A9B5ECE5-44F2-453E-BEB5-BEDDEF85A943}
+	EndGlobalSection
+EndGlobal
