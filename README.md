@@ -22,9 +22,7 @@ A lightweight Windows 10/11 widget: internet speed next to the taskbar clock, pl
 
 ## Install
 
-> If the [Releases](../../releases) page has no download yet, [build from source](#build).
-
-1. Download `TaqvimWidget-Setup.exe` from [Releases](../../releases).
+1. Download `TaqvimWidget-Setup.exe` from the [latest release](../../releases/latest).
 2. Run it and press **O'rnatish** (Install). Administrator rights are not required.
 
 The binary is not code-signed, so Windows SmartScreen may warn you. Releases include a SHA-256 checksum, or you can build the installer yourself.
