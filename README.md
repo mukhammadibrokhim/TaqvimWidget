@@ -3,94 +3,109 @@
 [![CI](../../actions/workflows/ci.yml/badge.svg)](../../actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-**O'zbekcha** · [English](README.en.md)
+**English** · [O'zbekcha](README.uz.md)
 
-Windows 10/11 uchun yengil widget: internet tezligi soat yonida, namoz vaqtlari, kalendar va eslatmalar bitta oynada.
+A lightweight Windows 10/11 widget: internet speed next to the taskbar clock, plus prayer times, calendar and notes in one flyout. The user interface is in Uzbek.
 
-<img src="docs/images/widget.png" alt="Taqvim Widget oynasi (namunaviy ma'lumotlar bilan)" width="340">
+<img src="docs/images/widget.png" alt="Taqvim Widget flyout (sample data)" width="340">
 
-## Imkoniyatlar
+## Features
 
-- **Internet tezligi:** vazifalar panelida soat yonida, 60 soniyalik grafik, kunlik va oylik trafik, oylik limit.
-- **Aloqa nazorati:** ping ko'rsatkichi, internet uzilsa va tiklansa bildirishnoma.
-- **Tezlik testi:** faqat tugma bosilganda ishlaydi.
-- **Namoz vaqtlari:** 13 shahar, internetsiz hisoblanadi, hozirgi va keyingi vaqt ajratib ko'rsatiladi, oldindan eslatma.
-- **Kalendar:** ISO hafta raqamlari, bayramlar, kunlarga eslatma va vaqtli bildirishnoma.
-- **Tizim:** CPU, RAM, batareya.
-- **Pomodoro** taymeri.
-- Windows 11 uslubi, yorug' va qorong'i mavzu, aksent rangi, DPI masshtabi.
+- **Internet speed:** shown on the taskbar next to the clock, with a 60-second chart, daily and monthly traffic, and an optional monthly limit.
+- **Connectivity:** ping indicator, with notifications when the connection drops and returns.
+- **Speed test:** runs only when you press the button.
+- **Prayer times:** 13 cities in Uzbekistan, calculated offline. The current and next times are highlighted, with advance reminders.
+- **Calendar:** ISO week numbers, holidays, and per-day notes with timed reminders.
+- **System:** CPU, RAM and battery meters.
+- **Pomodoro** timer.
+- Windows 11 look, light and dark themes, accent color and DPI scaling.
 
-## O'rnatish
+## Install
 
-1. [Releases](../../releases/latest) sahifasidan `TaqvimWidget-Setup.exe` faylini yuklab oling.
-2. Faylni ishga tushiring va **O'rnatish** tugmasini bosing. Administrator huquqi kerak emas.
+> If the [Releases](../../releases) page has no download yet, [build from source](#build).
 
-Fayl raqamli imzolanmagan, shuning uchun Windows SmartScreen ogohlantirishi chiqishi mumkin. Faylning SHA-256 yig'indisi har bir relizga ilova qilinadi. Xohlasangiz, dasturni [manba koddan o'zingiz yig'ing](#yigish).
+1. Download `TaqvimWidget-Setup.exe` from [Releases](../../releases).
+2. Run it and press **O'rnatish** (Install). Administrator rights are not required.
 
-Talab: Windows 10 (1903+) yoki Windows 11. Qo'shimcha dastur o'rnatish shart emas (.NET Framework 4.8 Windows tarkibida bor).
+The binary is not code-signed, so Windows SmartScreen may warn you. Releases include a SHA-256 checksum, or you can build the installer yourself.
 
-O'chirish: **Sozlamalar → Ilovalar → Taqvim Widget**.
+**Requirements:** Windows 10 (1903 or later) or Windows 11. No extra runtime is needed, because .NET Framework 4.8 ships with Windows.
 
-## Ishlatish
+**Uninstall:** Settings → Apps → Taqvim Widget.
 
-| Amal | Natija |
+## Usage
+
+| Action | Result |
 |---|---|
-| Soat yonidagi tezlik yozuvi yoki tray ikonkasini bosish | Widget ochiladi / yopiladi |
-| O'ng tugma | Sozlamalar, chiqish |
-| Kalendardagi kunni bosish | Shu kunning eslatmalari |
-| Sichqoncha g'ildiragi (widget ustida) | Oyni almashtirish |
+| Click the taskbar speed text or the tray icon | Open or close the widget |
+| Right-click | Settings and exit |
+| Click a day in the calendar | Notes for that day |
+| Mouse wheel over the widget | Change month |
 
-## Resurs sarfi
+## Resource usage
 
-Bitta noutbukda, widget yopiq holatda 60 soniya davomida o'lchangan:
+Measured on one laptop over 60 seconds with the widget closed:
 
-| Ko'rsatkich | Qiymat |
+| Metric | Value |
 |---|---|
-| CPU (bitta yadroga nisbatan) | ~0.1% |
+| CPU (of a single core) | ~0.1% |
 | Private bytes | ~27 MB |
 | Private working set | ~9 MB |
-| O'rnatuvchi hajmi | ~150 KB |
+| Installer size | ~150 KB |
 
-Qiymatlar kompyuterga qarab farq qiladi. Bunga qanday erishilgani [arxitektura hujjatida](docs/ARCHITECTURE.md#resurs-sarfi) yozilgan.
+Results vary between machines. See [Architecture](docs/ARCHITECTURE.md) (in Uzbek) for how the footprint is kept small.
 
-## Maxfiylik
+## Privacy
 
-Telemetriya, reklama va hisob yo'q. Ma'lumotlar faqat kompyuteringizda, `%APPDATA%\TaqvimWidget` papkasida saqlanadi.
+There is no telemetry, advertising or account. Your data stays on your computer in `%APPDATA%\TaqvimWidget`.
 
-Dastur tarmoqqa faqat quyidagi hollarda murojaat qiladi:
+The app uses the network only in these cases:
 
-| Qachon | Qayerga | Nima uchun |
+| When | Where | Why |
 |---|---|---|
-| Har 8 soniyada | `1.1.1.1`, `8.8.8.8` | ICMP ping (aloqa holati) |
-| Faqat tezlik testi tugmasi bosilganda | `speed.cloudflare.com` | Tezlik o'lchash. Har bir testda o'nlab MB trafik sarflanishi mumkin |
+| Every 8 seconds | `1.1.1.1`, `8.8.8.8` | ICMP ping to show connectivity |
+| Only when you start a speed test | `speed.cloudflare.com` | Speed measurement. One test can use tens of megabytes |
 
-Tezlik ko'rsatkichi tarmoq adapterining hisoblagichlaridan o'qiladi va trafik sarflamaydi.
+The live speed reading comes from network adapter counters and uses no traffic.
 
-## Namoz vaqtlari haqida
+## Prayer times
 
-Vaqtlar dastur ichida, [islom.uz](https://islom.uz) ishlatadigan parametrlarga moslab hisoblanadi. Bu loyiha islom.uz yoki biror diniy idoraning rasmiy mahsuloti **emas**. Muhim hollarda rasmiy taqvimni tekshiring. Batafsil: [docs/PRAYER_TIMES.md](docs/PRAYER_TIMES.md).
+Times are calculated inside the app, using parameters matched to those of [islom.uz](https://islom.uz). This project is **not** an official product of, or affiliated with, islom.uz or any religious authority. Check an official timetable when accuracy matters. Details: [docs/PRAYER_TIMES.md](docs/PRAYER_TIMES.md) (in Uzbek).
 
-## Yigish
+## Build
 
-[.NET SDK 8.0+](https://dotnet.microsoft.com/download) kerak.
+Requires [.NET SDK 8.0 or later](https://dotnet.microsoft.com/download).
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\build.ps1
 ```
 
-Natija: `dist\TaqvimWidget-Setup.exe`. Faqat testlar:
+The script runs the tests and creates `dist\TaqvimWidget-Setup.exe`. To run only the tests:
 
 ```powershell
 dotnet test tests\TaqvimWidget.Core.Tests
 ```
 
-## Hujjatlar
+## Project structure
 
-- [Arxitektura](docs/ARCHITECTURE.md)
-- [Namoz vaqtlari hisobi](docs/PRAYER_TIMES.md)
-- [Hissa qo'shish](CONTRIBUTING.md)
-- [O'zgarishlar tarixi](CHANGELOG.md)
+| Path | Contents |
+|---|---|
+| `src/TaqvimWidget.Core` | UI-independent logic, covered by unit tests |
+| `src/TaqvimWidget.App` | WinForms interface and Windows integration |
+| `src/TaqvimWidget.Setup` | Per-user installer |
+| `src/Shared` | Code shared by the app and the installer |
+| `tests` | Unit tests |
 
-## Litsenziya
+## Known limitations
+
+- The taskbar speed text is a window placed over the taskbar, not an official Windows API. A future Windows update could affect it. You can turn it off in Settings.
+- Unit tests cover the core logic only, not the interface or Windows integration.
+- Eid holiday dates are approximate.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md). Changes are listed in the [changelog](CHANGELOG.md) (in Uzbek).
+
+## License
 
 [MIT](LICENSE)
